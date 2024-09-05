@@ -47,9 +47,8 @@ contract OurTokenTest is Test, ZkSyncChainChecker {
     }
 
     function testAllowances() public {
-
         // transferFrom is especial function by ERC20 which help to use someone's token on behalf of him
-        
+
         uint256 initialAllowance = 1000;
 
         // Bob approves Alice to spend tokens on his behalf
@@ -63,5 +62,4 @@ contract OurTokenTest is Test, ZkSyncChainChecker {
         assertEq(ourToken.balanceOf(alice), transferAmount);
         assertEq(ourToken.balanceOf(bob), BOB_STARTING_AMOUNT - transferAmount);
     }
-
 }
